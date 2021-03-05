@@ -1,0 +1,84 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+/* Fade Background Image image,lineargrad(white,50%),white,50% */
+body {
+  background-image: url("../images/background.jpg"), linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5));
+  background-blend-mode: overlay;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/******************************************
+/* LAYOUT Flex Grid
+/*******************************************/
+
+.calculator {
+  position: absolute;
+  display: grid;
+  border-radius: 6px;
+  border:8px solid black;
+}
+
+#display {
+  display: grid;
+  grid-column: span 4;
+  height: 80px;
+  width: 500px;
+  text-align: right;
+  background-color: rgb(34, 43, 35);
+  color: rgb(32, 247, 54);
+  font-size: 40px;
+}
+
+@media only screen and (max-width: 600px){
+  #display {
+    width: 300px;
+  }
+}
+
+.btn {
+  display: grid;
+  grid-column: span 1;
+  height: 80px;
+  text-align: center;
+  color: black;
+  place-items: center;
+}
+.wide {
+  grid-column: span 2;
+}
+
+/******************************************
+/* Style button colors
+/*******************************************/
+.white {
+  background-color: white;
+}
+.grey {
+  background-color: rgb(220, 220, 220);
+}
+.blue {
+  background-color: rgb(120, 226, 255);
+}
+.btn:hover {
+  background-color: rgb(180,180,180);
+}
+.btn:active {
+  background-color: rgb(140,140,140);
+}
+/* special blue color for equals sign */
+.blue:hover {
+  background-color: rgb(64, 206, 245);
+}
+.blue:active {
+  background-color: rgb(28, 164, 201)
+}
